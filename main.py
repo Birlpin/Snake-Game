@@ -19,9 +19,8 @@ class main():
         while run:
 
             if starterscreen.start().startin == True:
-                self.logo = self.window.blit(starterscreen.start().startingbackground, (-240, -300))
-                pygame.draw.rect(self.window, (255, 255,255), (720//2-150, 500/2-50, 300, 100))
-                pygame.draw.rect(self.window, (255,255,255), (720//2-150, 500//2+100, 300, 100))
+                starterscreen.start().draw_screen(self.window)
+
 
 
             for event in pygame.event.get():

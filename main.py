@@ -16,21 +16,16 @@ class main():
     def run(self):
 
         run = True
+        instart = True
         while run:
 
-            if starterscreen.start().startin == True:
-                self.logo = self.window.blit(starterscreen.start().startingbackground, (-240, -300))
-                pygame.draw.rect(self.window, (255, 255,255), (720//2-150, 500/2-50, 300, 100))
-                pygame.draw.rect(self.window, (255,255,255), (720//2-150, 500//2+100, 300, 100))
-
+            if instart:
+                starterscreen.run()
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     run = False
-
-                if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                    click_pos = event.pos
-
+            pass
 
             pygame.display.update()
             self.clock.tick(30)

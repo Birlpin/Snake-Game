@@ -15,7 +15,10 @@ class main():
 
         # init the start class
         self.start = starterscreen.start()
-        self.gaming = game.game().gaming
+        self.game = game.game()
+
+
+        self.game.make_board()
 
         main.run(self)
 
@@ -23,11 +26,20 @@ class main():
     def run(self):
 
         run = True
+        apple = None
         while run:
 
             # starter screen draw
             if self.start.startin == True:
                 self.start.draw_screen(self.window)
+
+            # game start
+            if self.game.gaming == True:
+                self.game.draw_screen(self.window)
+                if apple == None:
+                    self.game.random_select()
+
+
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -38,9 +50,9 @@ class main():
                     if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                         click_pos = pygame.mouse.get_pos()
 
-                        if self.start.startbutton.collidepoint((click_pos)):
+                        if self.start.startbutton.collidepoint(click_pos):
                             self.start.startin = False
-                            self.gaming = True
+                            self.game.gaming = True
 
             pygame.display.update()
             self.clock.tick(30)

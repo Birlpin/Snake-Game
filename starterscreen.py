@@ -15,9 +15,9 @@ class start():
         pygame.draw.rect(window, (127,181,48), (720//2-150, 500//2+100, 300, 100))
 
         # text on screen
-        text_font = pygame.font.SysFont("Arial", 30)
+        text_font = pygame.font.SysFont("Arial", 75)
         play_text = text_font.render("Play", True, (128,128,128))
-        window.blit(play_text, (0,0))
+        window.blit(play_text, (720//2 - 50, 720//2 - 50))
 
 
 

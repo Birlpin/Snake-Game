@@ -6,19 +6,18 @@ class main():
     def __init__(self):
         pygame.init()
 
-        window_x =720
-        window_y = 500
+        self.window_x = 720
+        self.window_y = 720
 
         self.clock = pygame.time.Clock()
 
-        self.window = pygame.display.set_mode((window_x, window_y))
+        self.window = pygame.display.set_mode((self.window_x, self.window_y))
+        self.window.fill((6,63,62))
 
         # init the start class
         self.start = starterscreen.start()
         self.game = game.game()
 
-
-        self.game.make_board()
 
         main.run(self)
 
@@ -26,7 +25,6 @@ class main():
     def run(self):
 
         run = True
-        apple = None
         while run:
 
             # starter screen draw
@@ -35,9 +33,10 @@ class main():
 
             # game start
             if self.game.gaming == True:
-                self.game.draw_screen(self.window)
-                if apple == None:
-                    self.game.random_select()
+                if not self.game.apple_exi:
+                    self.game.add_apple()
+                    self.game.apple_exi = True
+                self.game.draw_board(self.window, self.window_x, self.window_y)
 
 
 

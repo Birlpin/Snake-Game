@@ -1,0 +1,4 @@
+([('main',
+   '/Users/yaroslavbatyzhin/Library/CloudStorage/GoogleDrive-batyzhiny@mymacewan.ca/My '
+   'Drive/Scripts/Python Scripts/Pygame/Snake Game/dist/main',
+   'EXECUTABLE')],)
